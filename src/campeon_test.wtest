@@ -1,0 +1,20 @@
+import campeon.*
+import items.*
+import oleadas.*
+
+describe "Campeon"{
+	const garen = new Campeon ( puntosDeVidaPropio = 20, puntosAtaquePropio = 10)
+	const anillo = new AnilloDeDoran (peso=200)
+	const tomo = new TomoAmplificador (peso=1000)
+	const minions1 = new Oleada(minions = 40, plusdanio = 0 )
+	
+	method initialize(){
+		garen.equiparItem(anillo)
+		garen.equiparItem(tomo)
+		garen.puntosDeDanio(minions1)
+	}
+	
+test "140 de vida"{
+	assert.equals(140,garen.puntosDeVidaTotal())
+}	
+}
